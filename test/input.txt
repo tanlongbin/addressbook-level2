@@ -141,6 +141,31 @@
   list
 
 ##########################################################
+# test search persons command
+##########################################################
+
+  #add more person for testing
+  add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
+  add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
+  add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
+
+  # should consider no keywords as invalid command format
+  search
+  # should only return exact match of tag
+  search friend
+  # does not match if none have keyword
+  search family
+  # matching should be case-sensitive
+  search owesMoney
+
+  # find unique keyword
+  search secretive
+  # find multiple with same keyword
+  search friends
+  # find multiple with some keywords
+  search starchy friends
+
+##########################################################
 # test clear command
 ##########################################################
 

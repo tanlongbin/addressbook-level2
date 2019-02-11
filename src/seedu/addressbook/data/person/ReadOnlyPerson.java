@@ -22,6 +22,11 @@ public interface ReadOnlyPerson {
     Set<Tag> getTags();
 
     /**
+     * Returns a new Set that contains all the tags of this person.
+     */
+    Set<String> getAllTags();
+
+    /**
      * Returns true if both persons have the same identity fields (name and telephone).
      */
     default boolean isSamePerson(ReadOnlyPerson other) {
@@ -95,4 +100,5 @@ public interface ReadOnlyPerson {
         }
         return builder.toString();
     }
+
 }

@@ -70,6 +70,16 @@ public class Person implements ReadOnlyPerson {
         tags.addAll(replacement);
     }
 
+    /**
+     * Return a set containing all the tags associated with this person.
+     */
+    @Override
+    public Set<String> getAllTags() {
+        Set<String> setOfTags = new HashSet<>();
+        tags.forEach(t -> setOfTags.add(t.tagName));
+        return setOfTags;
+    }
+
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
