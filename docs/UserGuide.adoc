@@ -91,6 +91,25 @@ Returns `John Doe` but not `john`.
 * `find Betsy Tim John` +
 Returns Any person having names `Betsy`, `Tim`, or `John`.
 
+== Searching all persons containing any keyword in their tags: `search`
+
+Search for persons who are tagged with any of the given keywords. +
+Format: `search KEYWORD [MORE_KEYWORDS]`
+
+[NOTE]
+====
+The search is case sensitive, the order of the keywords does not matter, only the tag is searched,
+and persons with tags matching at least one keyword will be returned (i.e. `OR` search).
+====
+
+Examples:
+
+* `search friend` +
+Returns `Betsy`.
+
+* `find criminal friend` +
+Returns Any person having tags `criminal` or `friend`.
+
 == Deleting a person : `delete`
 
 Deletes the specified person from the address book. Irreversible. +
